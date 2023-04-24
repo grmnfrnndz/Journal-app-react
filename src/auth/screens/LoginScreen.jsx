@@ -10,14 +10,16 @@ import {checkingAuthentication, startEmailPasswordSignIn, startGoogleSignIn} fro
 import {useForm} from "../../hooks/useForm.js";
 
 
+const formData = {
+        email: 'german@german.com',
+        password: '123456789'
+    };
+
 export const LoginScreen = () => {
 
     const {status, errorMessage} = useSelector(state => state.auth);
 
-    const {email, password, onInputChange} = useForm({
-        email: 'german@german.com',
-        password: '123456789'
-    });
+    const {email, password, onInputChange} = useForm(formData);
     const dispatch = useDispatch();
 
     const isAuthenticating = useMemo(() => status === 'checking', [status]);
