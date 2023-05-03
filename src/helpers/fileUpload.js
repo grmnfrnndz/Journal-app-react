@@ -1,5 +1,6 @@
 export const fileUpload = async (file) => {
-    if (!file) throw new Error('file is required');
+    // if (!file) throw new Error('file is required');
+    if (!file) return null;
 
     const cloudUrl = 'https://api.cloudinary.com/v1_1/dwzeydb7o/upload';
 
@@ -19,7 +20,8 @@ export const fileUpload = async (file) => {
 
         return cloudResponse.secure_url;
     } catch (err) {
-        throw new Error(err.message);
+        // throw new Error(err.message);
+        return null;
     }
 }
 
