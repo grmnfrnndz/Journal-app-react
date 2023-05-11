@@ -6,11 +6,10 @@ import {clearNotesLogout, setNotes} from "../journal/index.js";
 
 
 export const checkingAuthentication = () => {
-    return async(dispatch) => {
+    return async (dispatch) => {
         dispatch(checkingCredentials());
     }
 }
-
 
 export const startGoogleSignIn = () => {
     return async (dispatch) => {
@@ -21,8 +20,6 @@ export const startGoogleSignIn = () => {
         if (!result.ok) return dispatch(logout(result));
 
         dispatch(login(result))
-
-        console.log({result});
     }
 }
 
@@ -37,7 +34,6 @@ export const startCreatingUserWithEmailPassword = ({email, password, displayName
         dispatch(login({uid, displayName, email, photoURL}));
     }
 }
-
 
 export const startEmailPasswordSignIn = ({email, password}) => {
     return async (dispatch) => {

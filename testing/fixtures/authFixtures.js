@@ -1,5 +1,5 @@
 export const initialState = {
-     status: 'checking',
+    status: 'checking',
     uid: null,
     email: null,
     displayName: null,
@@ -8,7 +8,7 @@ export const initialState = {
 };
 
 export const authenticatedState = {
-     status: 'authenticated',
+    status: 'authenticated',
     uid: 'abc123',
     email: 'demo@google.com',
     displayName: 'Demo User',
@@ -17,7 +17,7 @@ export const authenticatedState = {
 };
 
 export const notAuthenticatedState = {
-     status: 'not-authenticated',
+    status: 'not-authenticated',
     uid: null,
     email: null,
     displayName: null,

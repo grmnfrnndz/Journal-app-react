@@ -33,16 +33,16 @@ export const LoginScreen = () => {
     }
 
     const onGoogleSignIn = () => {
-
-
         console.log('onGoogleSignIn');
         dispatch(startGoogleSignIn());
     }
 
     return (
         <AuthLayout title="Login">
-                <form onSubmit={onSubmit}
-                className='animate__animated animate__fadeIn animate__faster'
+                <form
+                    aria-label='submit-form'
+                    onSubmit={onSubmit}
+                    className='animate__animated animate__fadeIn animate__faster'
                 >
                     <Grid container>
                         <Grid item xs={12} sx={{mt: 2}}>
@@ -61,6 +61,9 @@ export const LoginScreen = () => {
                                 label="Password"
                                 type="password"
                                 fullWidth
+                                inputProps={{
+                                    'data-testid': 'password'
+                                }}
                                 name='password'
                                 value={password}
                                 onChange={onInputChange}
@@ -87,7 +90,7 @@ export const LoginScreen = () => {
                                 </Button>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <Button onClick={onGoogleSignIn} variant="contained" fullWidth disabled={isAuthenticating}>
+                                <Button aria-label='google-btn' onClick={onGoogleSignIn} variant="contained" fullWidth disabled={isAuthenticating}>
                                     <Google/>
                                     <Typography sx={{ml: 1}}>
                                         Google
